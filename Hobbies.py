@@ -20,13 +20,12 @@ def get_hobbies(data):
     person_hobbies = [person_info[1] for person_info in data]
     hobbies_list = []
     for i in person_hobbies:
-        if ',' in i:
-            for hobby in i.split(','):
-                hobbies_list.append(hobby)
-        else:
+        for hobby in i.split(','):
             hobbies_list.append(hobby)
+    temp = []
+    temp = [hobby for hobby in hobbies_list if hobby not in temp]
 
-    return set(hobbies_list)
+    return temp
 
 
 def get_count(data, hobbies_list):
@@ -47,7 +46,7 @@ def main():
     """ main function """
     file_name = 'Hobbies.txt'
     data = get_data(file_name)
-    hobbies_list = list(get_hobbies(data))
+    hobbies_list = get_hobbies(data)
     dict_hobbies = get_count(data, hobbies_list)
     for hobby, count in dict_hobbies.items():
         print(f'{hobby:15} {count}')
