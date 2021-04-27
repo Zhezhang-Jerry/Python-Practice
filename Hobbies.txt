@@ -1,0 +1,8 @@
+Zhang Basketball, Badminton
+Wang Basketball, Table-Tennis
+Li Basketball, Billiards
+Zhao Basketball, Soccer, Billiards
+Ma Table-Tennis, Billiards
+Qian Badminton, Soccer
+Sun Table-Tennis, Billiards
+Qiang Badminton
