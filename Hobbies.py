@@ -7,6 +7,7 @@ Date: Apr 26 2021
 import sys
 
 def get_data(file):
+    """ open file and get data """
     with open(file, 'r') as f_hobbies:
         content = f_hobbies.readlines()
         total_list = [i.strip().split(' ') for i in content]
@@ -15,6 +16,7 @@ def get_data(file):
 
 
 def get_hobbies(data):
+    """ get the hobbies from data and delete the duplex hobbies """
     person_hobbies = [person_info[1] for person_info in data]
     hobbies_list = []
     for i in person_hobbies:
@@ -28,6 +30,7 @@ def get_hobbies(data):
 
 
 def get_count(data, hobbies_list):
+    """ count each person's hobbies and make it as a dictionary """
     count_hobby = 0
     dict_hobbies = {}
     for hobby in hobbies_list:
@@ -41,6 +44,7 @@ def get_count(data, hobbies_list):
 
 
 def main():
+    """ main function """
     file_name = 'Hobbies.txt'
     data = get_data(file_name)
     hobbies_list = list(get_hobbies(data))
